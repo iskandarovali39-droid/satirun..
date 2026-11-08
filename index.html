@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SATIRUN — спортивная одежда для тех, кто тренируется с характером.">
+  <meta name="theme-color" content="#101010">
+  <title>SATIRUN — тренируйся с характером</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--white:#f5f5f2;--muted:#a3a3a0;--line:#30302e;--accent:#d6ff3f;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Manrope,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .topline{height:4px;background:var(--accent)}header{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}.logo{font-size:27px;font-weight:800;letter-spacing:3px}.logo span{color:var(--accent)}
+    .links{display:flex;gap:30px;color:#d0d0cb;font-size:13px;font-weight:700}.links a:hover{color:var(--accent)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#111;font-weight:800;border:0;padding:14px 22px;border-radius:3px;cursor:pointer;transition:.2s}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);background:#e4ff80}.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:9px 12px}
+    .hero{min-height:640px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px;padding:75px 0 85px}
+    .eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+    h1{font-size:clamp(54px,7.5vw,100px);line-height:.94;letter-spacing:-5px;margin:22px 0 25px;font-weight:800}
+    h1 em{font-style:normal;color:var(--accent)}.hero p{max-width:510px;color:var(--muted);line-height:1.8;font-size:16px}
+    .hero-actions{display:flex;gap:13px;align-items:center;margin-top:32px;flex-wrap:wrap}.btn-outline{border:1px solid #62625d;padding:13px 20px;font-weight:700}
+    .hero-visual{min-height:470px;position:relative;background:linear-gradient(145deg,#252525,#101010 65%);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid #292929}
+    .hero-visual:before{content:"";position:absolute;width:340px;height:340px;border:1px solid #4a4a43;border-radius:50%;box-shadow:0 0 0 38px #ffffff05,0 0 0 76px #ffffff03}
+    .hero-mark{position:relative;text-align:center;transform:rotate(-8deg)}.hero-mark strong{font-size:clamp(60px,8vw,112px);letter-spacing:-8px;line-height:.85;display:block}.hero-mark small{color:var(--accent);letter-spacing:6px;font-weight:800}
+    .vertical{position:absolute;right:20px;top:22px;writing-mode:vertical-rl;color:#858580;font-size:10px;letter-spacing:3px}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:3px;white-space:nowrap}
+    section{padding:95px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:38px}
+    .section-head h2{font-size:clamp(34px,5vw,58px);letter-spacing:-2px;margin:10px 0 0}.section-head p{max-width:390px;color:var(--muted);line-height:1.7;font-size:14px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.product{background:var(--panel);border:1px solid var(--line);overflow:hidden}
+    .product-art{height:270px;background:radial-gradient(circle at 50% 40%,#393939,#191919 66%);display:flex;align-items:center;justify-content:center;position:relative}
+    .product-art:after{content:"SATIRUN";position:absolute;bottom:14px;left:15px;color:#777;font-size:11px;letter-spacing:3px;font-weight:800}
+    .shape{width:116px;height:150px;background:linear-gradient(120deg,#303030,#090909);clip-path:polygon(20% 0,40% 0,50% 9%,60% 0,80% 0,100% 28%,82% 42%,75% 31%,75% 100%,25% 100%,25% 31%,18% 42%,0 28%);filter:drop-shadow(0 18px 20px #000)}
+    .shape.shorts{width:140px;height:120px;clip-path:polygon(5% 0,95% 0,88% 100%,54% 100%,50% 42%,46% 100%,12% 100%)}
+    .shape.compress{width:95px;height:170px;clip-path:polygon(20% 0,80% 0,100% 25%,76% 100%,24% 100%,0 25%)}
+    .shape.set{width:140px;height:170px;clip-path:polygon(20% 0,40% 0,50% 8%,60% 0,80% 0,100% 22%,82% 37%,75% 28%,75% 65%,95% 65%,90% 100%,55% 100%,50% 70%,45% 100%,10% 100%,5% 65%,25% 65%,25% 28%,18% 37%,0 22%)}
+    .product-info{padding:19px}.product-info h3{font-size:16px;margin:0 0 7px}.product-info p{font-size:12px;color:var(--muted);margin:0 0 18px;line-height:1.6}.product-bottom{display:flex;justify-content:space-between;align-items:center}.price{font-weight:800}.small-btn{background:none;border:1px solid #555;color:white;padding:9px 12px;font-size:11px;font-weight:800;cursor:pointer}.small-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .manifesto{background:var(--accent);color:#111;padding:70px 0}.manifesto .eyebrow{color:#343b1c}.manifesto h2{font-size:clamp(38px,6vw,72px);letter-spacing:-3px;line-height:1.02;max-width:900px;margin:20px 0}.manifesto p{max-width:650px;line-height:1.8;color:#30351d}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:28px;border:1px solid var(--line);background:var(--panel)}.feature b{font-size:32px;color:var(--accent)}.feature h3{margin:22px 0 10px}.feature p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+    .audience{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.audience article{padding:26px;background:var(--panel2);border-top:2px solid var(--accent)}.audience small{color:var(--accent);font-weight:800;letter-spacing:1px}.audience h3{font-size:20px}.audience p{color:var(--muted);font-size:13px;line-height:1.7}
+    .contact{background:#151515;border-top:1px solid var(--line)}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.contact h2{font-size:clamp(38px,5vw,60px);letter-spacing:-2px;line-height:1;margin:15px 0}.contact-copy{color:var(--muted);line-height:1.8;font-size:14px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#c9c9c3;font-weight:700}.field input,.field select,.field textarea{background:#0c0c0c;border:1px solid #3a3a37;color:white;padding:14px;outline:none;border-radius:2px}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}.field textarea{min-height:90px;resize:vertical}.consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:11px;line-height:1.6}.consent input{margin-top:3px;accent-color:var(--accent)}form .btn{grid-column:1/-1}
+    footer{padding:28px 0;border-top:1px solid var(--line);color:#858580;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-links{display:flex;gap:20px}.footer-links a:hover{color:var(--accent)}
+    .notice{margin-top:12px;color:var(--accent);font-size:12px;line-height:1.6}.disclaimer{font-size:10px;color:#777;margin-top:20px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;padding:65px 0}.hero-visual{min-height:350px}.products{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr;gap:30px}}
+    @media(max-width:650px){.wrap{width:min(100% - 30px,var(--max))}.nav{height:66px}.links{display:none;position:absolute;top:66px;left:0;right:0;background:#101010;padding:22px;flex-direction:column;gap:18px;border-bottom:1px solid var(--line)}.links.open{display:flex}.nav-cta{display:none}.menu{display:block}.hero{min-height:0;padding:55px 0}.hero-visual{min-height:270px}h1{letter-spacing:-3px}.section-head{display:block}.section-head p{margin-top:15px}section{padding:70px 0}.products{gap:10px}.product-art{height:205px}.product-info{padding:13px}.product-info h3{font-size:14px}.product-info p{font-size:11px}.small-btn{padding:8px}.features,.audience{grid-template-columns:1fr}.manifesto{padding:55px 0}form{grid-template-columns:1fr}.field.full,.consent,form .btn{grid-column:auto}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
+  </style>
+  <!-- Яндекс.Метрика: замените YOUR_METRIKA_ID на номер своего счётчика.
+       После создания целей добавьте идентификаторы в вызовы reachGoal ниже. -->
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r)return;}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    // Вставьте числовой ID счётчика вместо 00000000:
+    // ym(00000000,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+  </script>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#home">SATI<span>RUN</span></a>
+      <nav class="links" id="navLinks">
+        <a href="#catalog">КАТАЛОГ</a><a href="#about">О БРЕНДЕ</a><a href="#values">ПРИНЦИПЫ</a><a href="#contact">КОНТАКТЫ</a>
+      </nav>
+      <a class="nav-cta" href="#catalog">ВЫБРАТЬ ЭКИПИРОВКУ ↗</a>
+      <button class="menu" id="menuBtn" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Спортивная одежда нового характера</div>
+        <h1>ТРЕНИРУЙСЯ<br>С <em>ХАРАКТЕРОМ.</em></h1>
+        <p>SATIRUN — функциональная и современная одежда для тех, кто выбирает дисциплину, движение и постоянное развитие. Для зала, борьбы и каждого нового вызова.</p>
+        <div class="hero-actions"><a class="btn" href="#catalog">СМОТРЕТЬ КОЛЛЕКЦИЮ ↗</a><a class="btn-outline" href="#about">ПОЗНАКОМИТЬСЯ С БРЕНДОМ</a></div>
+      </div>
+      <div class="hero-visual" aria-label="Графическая композиция бренда SATIRUN">
+        <span class="vertical">DISCIPLINE · POWER · MOVEMENT</span>
+        <div class="hero-mark"><strong>SATI<br>RUN<span style="color:var(--accent)">.</span></strong><small>BUILT BY DISCIPLINE</small></div>
+      </div>
+    </div>
+
+    <div class="ticker">DISCIPLINE ✳ STRENGTH ✳ MOVEMENT ✳ CHARACTER ✳ DISCIPLINE ✳ STRENGTH ✳ MOVEMENT ✳</div>
+
+    <section id="catalog">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Коллекция SATIRUN</div><h2>ЭКИПИРОВКА<br>ДЛЯ ТВОЕГО ТЕМПА.</h2></div><p>Базовые тренировочные вещи для мужчин и женщин. Функциональность, свобода движения и единый спортивный образ.</p></div>
+        <div class="products">
+          <article class="product"><div class="product-art"><div class="shape"></div></div><div class="product-info"><h3>Тренировочная футболка</h3><p>Лаконичная база для зала и повседневной активности.</p><div class="product-bottom"><span class="price">от 1 990 ₽</span><button class="small-btn order" data-product="Тренировочная футболка">ВЫБРАТЬ</button></div></div></article>
+          <article class="product"><div class="product-art"><div class="shape shorts"></div></div><div class="product-info"><h3>Спортивные шорты</h3><p>Комфортная посадка и свобода движений на тренировке.</p><div class="product-bottom"><span class="price">от 2 490 ₽</span><button class="small-btn order" data-product="Спортивные шорты">ВЫБРАТЬ</button></div></div></article>
+          <article class="product"><div class="product-art"><div class="shape compress"></div></div><div class="product-info"><h3>Компрессионная одежда</h3><p>Плотная посадка для интенсивных тренировочных сессий.</p><div class="product-bottom"><span class="price">от 2 990 ₽</span><button class="small-btn order" data-product="Компрессионная одежда">ВЫБРАТЬ</button></div></div></article>
+          <article class="product"><div class="product-art"><div class="shape set"></div></div><div class="product-info"><h3>Тренировочный комплект</h3><p>Сочетание верха и низа в едином стиле SATIRUN.</p><div class="product-bottom"><span class="price">от 4 490 ₽</span><button class="small-btn order" data-product="Тренировочный комплект">ВЫБРАТЬ</button></div></div></article>
+        </div>
+        <p class="disclaimer">Цены и ассортимент на этой учебной демонстрационной странице являются примерными и не подтверждают наличие товара.</p>
+      </div>
+    </section>
+
+    <div class="manifesto" id="about"><div class="wrap"><div class="eyebrow">Философия бренда</div><h2>НЕ ИЩИ ЛЁГКИЙ ПУТЬ.<br>СОЗДАВАЙ СВОЙ.</h2><p>SATIRUN создан для людей, которые тренируются с характером. Мы объединяем функциональность и стиль, чтобы спортивная одежда подходила для зала, борьбы и активной жизни.</p></div></div>
+
+    <section id="values"><div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Почему SATIRUN</div><h2>ТРИ ПРИНЦИПА.<br>ОДИН ХАРАКТЕР.</h2></div><p>Одежда должна поддерживать движение, а не отвлекать от цели.</p></div>
+      <div class="features">
+        <article class="feature"><b>01</b><h3>Функциональность</h3><p>Продуманный спортивный формат для регулярных занятий и активного движения.</p></article>
+        <article class="feature"><b>02</b><h3>Стиль без лишнего</h3><p>Современный лаконичный дизайн, который легко сочетать в едином образе.</p></article>
+        <article class="feature"><b>03</b><h3>Доступность</h3><p>Практичный подход к ассортименту и доступному ценовому позиционированию.</p></article>
+      </div>
+    </div></section>
+
+    <section style="padding-top:0"><div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Для кого мы работаем</div><h2>ОДНА ЭНЕРГИЯ.<br>РАЗНЫЕ ЦЕЛИ.</h2></div></div>
+      <div class="audience">
+        <article><small>16–24</small><h3>Молодёжь</h3><p>Стильная и доступная форма для тех, кто хочет быть частью спортивной культуры.</p></article>
+        <article><small>25–34</small><h3>Посетители залов</h3><p>Удобная одежда для регулярных тренировок. Важны качество, комфорт и цена.</p></article>
+        <article><small>18–30</small><h3>Единоборства</h3><p>Свобода движения и практичность для тех, кто выходит на ковёр.</p></article>
+      </div>
+    </div></section>
+
+    <section class="contact" id="contact"><div class="wrap contact-grid">
+      <div><div class="eyebrow">Будь в движении</div><h2>ТВОЯ<br>ТРЕНИРОВКА.<br>ТВОЙ ХАРАКТЕР.</h2><p class="contact-copy">Оставь заявку, чтобы узнать подробности о коллекции SATIRUN. Для демонстрации КТ2 форма фиксирует тестовую заявку в браузере и сохраняет рекламные UTM-метки.</p></div>
+      <div>
+        <form id="leadForm">
+          <div class="field"><label for="name">ИМЯ *</label><input id="name" name="name" required placeholder="Как к тебе обращаться"></div>
+          <div class="field"><label for="phone">ТЕЛЕФОН *</label><input id="phone" name="phone" required type="tel" placeholder="+7 (___) ___-__-__"></div>
+          <div class="field full"><label for="product">ЧТО ИНТЕРЕСУЕТ?</label><select id="product" name="product"><option value="Консультация по коллекции">Консультация по коллекции</option><option>Тренировочная футболка</option><option>Спортивные шорты</option><option>Компрессионная одежда</option><option>Тренировочный комплект</option></select></div>
+          <div class="field full"><label for="comment">КОММЕНТАРИЙ</label><textarea id="comment" name="comment" placeholder="Размер, вопрос или пожелание (необязательно)"></textarea></div>
+          <label class="consent"><input type="checkbox" required name="consent"><span>Я даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="text-decoration:underline;color:var(--accent)">политикой конфиденциальности</a>.</span></label>
+          <button class="btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ ↗</button>
+        </form>
+        <div class="notice" id="formNotice" role="status" aria-live="polite"></div>
+        <p class="disclaimer">Демонстрационный режим: заявка сохраняется только в локальном хранилище этого браузера и не отправляется владельцу сайта. Перед реальным запуском подключите серверный обработчик или CRM-вебхук и проверьте юридические документы.</p>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><a class="logo" href="#home" style="font-size:20px">SATI<span>RUN</span></a><span>© 2026 SATIRUN. Учебный проект.</span><div class="footer-links"><a href="privacy.html">Политика конфиденциальности</a><a href="#home">Наверх ↑</a></div></div></footer>
+
+  <script>
+    // Сохраняем UTM-параметры при первом переходе на сайт.
+    const params = new URLSearchParams(location.search);
+    const utm = {};
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(k => {
+      if (params.has(k)) utm[k] = params.get(k);
+    });
+    if (Object.keys(utm).length) sessionStorage.setItem("satirun_utm", JSON.stringify(utm));
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+
+    document.querySelectorAll(".order").forEach(btn => btn.addEventListener("click", () => {
+      document.getElementById("product").value = btn.dataset.product;
+      document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+      if (typeof ym === "function") {
+        // После установки счётчика замените ID и настройте цель product_select в Метрике.
+        // ym(YOUR_METRIKA_ID, "reachGoal", "product_select");
+      }
+    }));
+
+    document.getElementById("leadForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(this).entries());
+      data.utm = JSON.parse(sessionStorage.getItem("satirun_utm") || "{}");
+      data.createdAt = new Date().toISOString();
+      data.demo = true;
+      const leads = JSON.parse(localStorage.getItem("satirun_demo_leads") || "[]");
+      leads.push(data);
+      localStorage.setItem("satirun_demo_leads", JSON.stringify(leads));
+      document.getElementById("formNotice").textContent =
+        "Тестовая заявка сохранена в этом браузере. Для реального получения заявок подключите обработчик формы / CRM.";
+      this.reset();
+      if (typeof ym === "function") {
+        // После настройки цели раскомментируйте вызов:
+        // ym(YOUR_METRIKA_ID, "reachGoal", "lead_submit");
+      }
+    });
+  </script>
+</body>
+</html>
